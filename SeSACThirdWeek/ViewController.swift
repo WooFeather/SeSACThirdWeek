@@ -6,12 +6,17 @@
 //
 
 import UIKit
+import MapKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet var userTextField: UITextField!
+    @IBOutlet var mapView: MKMapView!
+    @IBOutlet var pickerView: UIPickerView!
+    @IBOutlet var secondTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
 

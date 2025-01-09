@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, MKMapViewDelegate {
+class ViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var userTextField: UITextField!
     @IBOutlet var mapView: MKMapView!
@@ -34,7 +34,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         configureMapView()
     }
-    
+}
+
+// MARK: - 뷰객체 설정
+extension ViewController {
     func configureMapView() {
         let center = CLLocationCoordinate2D(latitude: 37.65370, longitude: 127.04740)
         mapView.region = MKCoordinateRegion(center: center, latitudinalMeters: 500, longitudinalMeters: 500)
@@ -44,19 +47,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         annotation.title = "창동티비"
         mapView.addAnnotation(annotation)
     }
-    
-    // 키보드에서 엔터키를 탭했을 때
-    // didEndOnExit과 다른점 => 얘는 키보드를 내리는거까지
-    // textFieldShouldReturn => 얘는 엔터키를 눌렀을 때
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
-        if textField == userTextField {
-            view.endEditing(true)
-        }
-        
-        return true
-    }
-    
+}
+
+// MARK: - PickerView 설정
+extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return component == 0 ? list.count : array.count
     }
@@ -80,3 +74,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 }
 
+// MARK: - TextField 설정
+extension ViewController: UITextFieldDelegate {
+    // 키보드에서 엔터키를 탭했을 때
+    // didEndOnExit과 다른점 => 얘는 키보드를 내리는거까지
+    // textFieldShouldReturn => 얘는 엔터키를 눌렀을 때
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField == userTextField {
+            view.endEditing(true)
+        }
+        
+        return true
+    }
+}

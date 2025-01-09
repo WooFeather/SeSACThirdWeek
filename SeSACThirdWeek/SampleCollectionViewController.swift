@@ -13,9 +13,12 @@ class SampleCollectionViewController: UIViewController {
 
     @IBOutlet var bannerCollectionView: UICollectionView!
     @IBOutlet var listCollectionView: UICollectionView!
+    @IBOutlet var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
         
         configureCollectionView()
         configureCollectionViewLayout()
@@ -57,12 +60,12 @@ class SampleCollectionViewController: UIViewController {
         layout.scrollDirection = .vertical
         
         let deviceWidth = UIScreen.main.bounds.width
-        let cellWidth = deviceWidth - (sectionInset * 2) - (cellSpacing * 2)
+        let cellWidth = deviceWidth - (sectionInset * 2) - (cellSpacing * 3)
         
         // 정사각형
-        layout.itemSize = CGSize(width: cellWidth / 3, height: cellWidth / 3)
+//        layout.itemSize = CGSize(width: cellWidth / 3, height: cellWidth / 3)
         // 세로로 조금 긴 형태 등 => 수식으로 설정
-//        layout.itemSize = CGSize(width: cellWidth / 3, height: (cellWidth / 3) * 1.2)
+        layout.itemSize = CGSize(width: cellWidth / 4, height: (cellWidth / 4) * 1.2)
         layout.sectionInset = UIEdgeInsets(top: sectionInset, left: sectionInset, bottom: sectionInset, right: sectionInset)
         
         listCollectionView.collectionViewLayout = layout
@@ -72,6 +75,24 @@ class SampleCollectionViewController: UIViewController {
         bannerCollectionView.isPagingEnabled = true
         bannerCollectionView.backgroundColor = .black
         bannerCollectionView.collectionViewLayout = collectionViewLayout()
+    }
+}
+
+extension SampleCollectionViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print(#function)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print(#function)
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        print(#function)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(#function)
     }
 }
 

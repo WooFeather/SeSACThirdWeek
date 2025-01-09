@@ -81,7 +81,7 @@
                                 </cells>
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wqx-cR-Qn0">
-                                <rect key="frame" x="0.0" y="239" width="393" height="579"/>
+                                <rect key="frame" x="0.0" y="289" width="393" height="529"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NPK-RT-Sai">
                                     <size key="itemSize" width="128" height="128"/>
@@ -100,14 +100,27 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="QQz-7i-Rjm">
+                                <rect key="frame" x="0.0" y="239" width="393" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="XK2-Nx-4Wg"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="VgF-to-oar" id="1I7-f5-l9j"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tjv-3v-THd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="QQz-7i-Rjm" firstAttribute="trailing" secondItem="tjv-3v-THd" secondAttribute="trailing" id="GSC-qk-Smg"/>
                             <constraint firstItem="tjv-3v-THd" firstAttribute="trailing" secondItem="jEu-Gz-MQM" secondAttribute="trailing" id="KGs-aL-yMh"/>
                             <constraint firstItem="jEu-Gz-MQM" firstAttribute="top" secondItem="tjv-3v-THd" secondAttribute="top" id="Kmg-Q5-fiB"/>
+                            <constraint firstItem="QQz-7i-Rjm" firstAttribute="leading" secondItem="tjv-3v-THd" secondAttribute="leading" id="VrQ-nn-pzV"/>
                             <constraint firstItem="jEu-Gz-MQM" firstAttribute="leading" secondItem="tjv-3v-THd" secondAttribute="leading" id="bEO-Yh-qWb"/>
-                            <constraint firstItem="wqx-cR-Qn0" firstAttribute="top" secondItem="jEu-Gz-MQM" secondAttribute="bottom" id="mkC-n7-HNG"/>
+                            <constraint firstItem="QQz-7i-Rjm" firstAttribute="top" secondItem="jEu-Gz-MQM" secondAttribute="bottom" id="bsE-Lp-cf8"/>
+                            <constraint firstItem="wqx-cR-Qn0" firstAttribute="top" secondItem="jEu-Gz-MQM" secondAttribute="bottom" constant="50" id="mkC-n7-HNG"/>
                             <constraint firstItem="tjv-3v-THd" firstAttribute="bottom" secondItem="wqx-cR-Qn0" secondAttribute="bottom" id="tYC-xY-Vmj"/>
                             <constraint firstItem="wqx-cR-Qn0" firstAttribute="leading" secondItem="tjv-3v-THd" secondAttribute="leading" id="wdZ-YL-nDS"/>
                             <constraint firstItem="tjv-3v-THd" firstAttribute="trailing" secondItem="wqx-cR-Qn0" secondAttribute="trailing" id="yHg-Vy-sDL"/>
@@ -116,6 +129,7 @@
                     <connections>
                         <outlet property="bannerCollectionView" destination="jEu-Gz-MQM" id="QQf-Gp-Lcp"/>
                         <outlet property="listCollectionView" destination="wqx-cR-Qn0" id="1Tu-ND-7px"/>
+                        <outlet property="searchBar" destination="QQz-7i-Rjm" id="sgl-oH-YUb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bi-ph-SNE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

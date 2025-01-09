@@ -7,9 +7,18 @@
 
 import UIKit
 
+struct Mentor {
+    let name: String
+    let age: Int
+}
+
 class SampleCollectionViewController: UIViewController {
     
-    var list: [Int] = Array(1...100)
+    // 전체 데이터
+    var totalList: [Int] = Array(1...100)
+    
+    // 필터링된 데이터
+    lazy var list: [Int] = totalList
 
     @IBOutlet var bannerCollectionView: UICollectionView!
     @IBOutlet var listCollectionView: UICollectionView!
@@ -81,19 +90,45 @@ class SampleCollectionViewController: UIViewController {
 extension SampleCollectionViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print(#function)
+        searchBar.setShowsCancelButton(false, animated: true)
+        view.endEditing(true)
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         print(#function)
+        searchBar.setShowsCancelButton(false, animated: true)
+        view.endEditing(true)
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         print(#function)
+//        searchBar.showsCancelButton = true
+        searchBar.setShowsCancelButton(true, animated: true)
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(#function)
+        
+        var result: [Int] = []
+        
+        if searchText == "" {
+            // 전체 데이터 보여주기
+            // 덮어씌워진 list에 다시 초기값 넣어주기
+            result = Array(1...100)
+        } else {
+            
+            for item in list {
+                
+                if item == Int(searchText)! {
+                    result.append(item)
+                }
+            }
+        }
+        
+        list = result
+        listCollectionView.reloadData()
     }
+        
 }
 
 extension SampleCollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -112,7 +147,7 @@ extension SampleCollectionViewController: UICollectionViewDelegate, UICollection
         DispatchQueue.main.async {
             cell.photoImageView.layer.cornerRadius = cell.photoImageView.frame.width / 2
         }
-        cell.titleLabel.text = "\(indexPath.item)"
+        cell.titleLabel.text = "\(list[indexPath.item])"
         
         return cell
     }

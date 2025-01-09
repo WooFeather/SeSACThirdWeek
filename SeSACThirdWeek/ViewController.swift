@@ -8,6 +8,10 @@
 import UIKit
 import MapKit
 
+struct User {
+    var name: String
+}
+
 class ViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet var userTextField: UITextField!
@@ -15,6 +19,20 @@ class ViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet var secondTextField: UITextField!
     
     let pickerView = UIPickerView()
+    
+    let color: [UIColor] = [.init(.blue)]
+    
+    // User가 계속 반복됨
+    let user: [User] = [
+        User(name: "a"),
+        User(name: "b")
+    ]
+    
+    // .init으로 생성하는게, 인스턴스 생성 시간이 가장 오래걸림
+    let person: [User] = [
+        .init(name: "a"),
+        .init(name: "b")
+    ]
     
     let list = ["가", "나", "다"]
     let array = ["1", "2", "3", "4"]

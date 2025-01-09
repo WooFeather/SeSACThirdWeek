@@ -13,9 +13,15 @@ class SampleCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    // layoutSubViews
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        photoImageView.layer.cornerRadius = photoImageView.frame.width / 2
+//    }
 }

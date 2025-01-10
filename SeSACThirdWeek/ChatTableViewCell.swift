@@ -9,6 +9,11 @@ import UIKit
 
 class ChatTableViewCell: UITableViewCell {
 
+    @IBOutlet var profileImageView: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var bubbleImage: UIImageView!
+    @IBOutlet var messageLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

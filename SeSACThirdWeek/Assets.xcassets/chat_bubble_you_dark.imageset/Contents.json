@@ -5,10 +5,10 @@
       "idiom" : "universal",
       "resizing" : {
         "cap-insets" : {
-          "bottom" : 14,
+          "bottom" : 32,
           "left" : 21,
           "right" : 21,
-          "top" : 17
+          "top" : 18
         },
         "center" : {
           "height" : 1,
@@ -24,7 +24,7 @@
       "idiom" : "universal",
       "resizing" : {
         "cap-insets" : {
-          "bottom" : 26,
+          "bottom" : 65,
           "left" : 39,
           "right" : 40,
           "top" : 33
@@ -43,7 +43,7 @@
       "idiom" : "universal",
       "resizing" : {
         "cap-insets" : {
-          "bottom" : 38,
+          "bottom" : 99,
           "left" : 62,
           "right" : 63,
           "top" : 50

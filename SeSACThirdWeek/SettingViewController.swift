@@ -24,8 +24,9 @@ struct Setting {
 // Int로 설정한 경우 자동으로 0부터 순서대로 들어감
 enum SettingOptions: Int, CaseIterable {
     case total
-    case personal
     case others
+    case personal
+    
     
     var mainOption: String {
         switch self {
@@ -43,7 +44,7 @@ enum SettingOptions: Int, CaseIterable {
         case .total:
             return ["공지사항", "실험실", "버전정보"]
         case .personal:
-            return ["개인/보안", "알림", "챝;ㅇ"]
+            return ["개인/보안", "알림", "채팅"]
         case .others:
             return ["고객센터"]
         }
@@ -59,8 +60,8 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(SettingOptions.total.subOption[2])    // 버전 정보
-        print(SettingOptions.allCases[0].subOption[2])  // 버전 정보
+//        print(SettingOptions.total.subOption[2])    // 버전 정보
+//        print(SettingOptions.allCases[0].subOption[2])  // 버전 정보
         
         
         print(SettingOptions.allCases)

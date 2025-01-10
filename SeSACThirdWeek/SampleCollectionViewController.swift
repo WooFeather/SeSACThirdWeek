@@ -81,6 +81,7 @@ class SampleCollectionViewController: UIViewController {
     }
     
     func configureCollectionViewLayout() {
+        // 스크롤하다가 중간에 멈추는 코드
         bannerCollectionView.isPagingEnabled = true
         bannerCollectionView.backgroundColor = .black
         bannerCollectionView.collectionViewLayout = collectionViewLayout()

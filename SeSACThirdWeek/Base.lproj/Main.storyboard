@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VgF-to-oar">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qF0-vv-Mr4">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
@@ -136,10 +136,75 @@
             </objects>
             <point key="canvasLocation" x="1437" y="-35"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Bmx-EP-fyL">
+            <objects>
+                <viewController id="qF0-vv-Mr4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nvs-pg-q2K">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="ㅇㅇㅇㅇㅇㅇㅇㅇㅇ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qaY-CB-F7T">
+                                <rect key="frame" x="20" y="79" width="234" height="40"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gNL-Yk-coZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ㅇㅇ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrf-1g-yEA">
+                                <rect key="frame" x="274" y="79" width="99" height="40"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="f6Q-NT-cwR"/>
+                                    <constraint firstAttribute="height" constant="40" id="jI8-rf-0CN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1U-sS-a0f">
+                                <rect key="frame" x="159" y="216" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="tuy-KJ-apU" kind="presentation" id="pCs-vH-FrG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bwr-zX-flW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bwr-zX-flW" firstAttribute="trailing" secondItem="mrf-1g-yEA" secondAttribute="trailing" constant="20" id="1S2-dT-03X"/>
+                            <constraint firstItem="mrf-1g-yEA" firstAttribute="top" secondItem="bwr-zX-flW" secondAttribute="top" constant="20" id="Eg3-cB-Iav"/>
+                            <constraint firstItem="qaY-CB-F7T" firstAttribute="top" secondItem="bwr-zX-flW" secondAttribute="top" constant="20" id="TD7-Mf-gc0"/>
+                            <constraint firstItem="mrf-1g-yEA" firstAttribute="leading" secondItem="qaY-CB-F7T" secondAttribute="trailing" constant="20" id="WeM-TK-02e"/>
+                            <constraint firstItem="qaY-CB-F7T" firstAttribute="leading" secondItem="bwr-zX-flW" secondAttribute="leading" constant="20" id="ljW-mN-pHn"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IDw-bB-L6o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="787.32394366197184"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="9dh-Ef-Sz2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" id="tuy-KJ-apU" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zrs-CJ-EbZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="681" y="631"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
